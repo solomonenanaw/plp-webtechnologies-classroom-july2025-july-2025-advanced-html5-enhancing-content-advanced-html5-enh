@@ -1,1 +1,222 @@
-<HOC>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enhanced HTML5 Content & Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header, main, section, footer {
+      margin-bottom: 2rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 0.5rem;
+      text-align: left;
+    }
+
+    fieldset {
+      border: 1px solid #ccc;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    legend {
+      font-weight: bold;
+    }
+
+    label {
+      display: block;
+      margin: 0.5rem 0 0.2rem;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      box-sizing: border-box;
+    }
+
+    .media {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    video, audio {
+      max-width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>HTML5 Content & Form Showcase</h1>
+    <p>This page demonstrates semantic HTML5 elements including lists, tables, media, and a dynamic form with native validation.</p>
+  </header>
+
+  <main>
+
+    <!-- Section: Lists -->
+    <section>
+      <h2>Popular Web Technologies</h2>
+
+      <h3>Ordered List (Top 5 Front-End Technologies)</h3>
+      <ol>
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>JavaScript</li>
+        <li>React</li>
+        <li>Vue.js</li>
+      </ol>
+
+      <h3>Unordered List (Development Tools)</h3>
+      <ul>
+        <li>VS Code</li>
+        <li>Git & GitHub</li>
+        <li>Chrome DevTools</li>
+        <li>Figma</li>
+      </ul>
+    </section>
+
+    <!-- Section: Table -->
+    <section>
+      <h2>Web Development Course Schedule</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Week</th>
+            <th>Topic</th>
+            <th>Resources</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>HTML5 Basics</td>
+            <td><a href="#">HTML5 Guide</a></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>CSS3 Styling</td>
+            <td><a href="#">CSS3 Tutorials</a></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>JavaScript Fundamentals</td>
+            <td><a href="#">JS Docs</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Section: Media -->
+    <section>
+      <h2>Media Showcase</h2>
+      <div class="media">
+        <figure>
+          <img src="https://via.placeholder.com/300x200" alt="Placeholder Image" />
+          <figcaption>Sample Image (300x200)</figcaption>
+        </figure>
+
+        <video controls width="300">
+          <source src="sample-video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+
+        <audio controls>
+          <source src="sample-audio.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </section>
+
+    <!-- Section: HTML5 Form -->
+    <section>
+      <h2>User Registration Form</h2>
+      <form action="#" method="post" novalidate>
+        <fieldset>
+          <legend>Personal Information</legend>
+
+          <label for="fullName">Full Name:</label>
+          <input type="text" id="fullName" name="fullName" placeholder="Jane Doe" required />
+
+          <label for="email">Email Address:</label>
+          <input type="email" id="email" name="email" placeholder="name@example.com" required />
+
+          <label for="dob">Date of Birth:</label>
+          <input type="date" id="dob" name="dob" required />
+        </fieldset>
+
+        <fieldset>
+          <legend>Account Details</legend>
+
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" minlength="5" maxlength="15" required />
+
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password"
+                 pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                 title="Must contain at least one number, one uppercase and lowercase letter, and be at least 8 characters"
+                 required />
+
+          <label for="confirmPassword">Confirm Password:</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" required />
+
+          <label for="role">Select Role:</label>
+          <select id="role" name="role" required>
+            <option value="">--Choose a role--</option>
+            <option value="developer">Developer</option>
+            <option value="designer">Designer</option>
+            <option value="manager">Project Manager</option>
+          </select>
+        </fieldset>
+
+        <fieldset>
+          <legend>Preferences</legend>
+
+          <label>
+            <input type="checkbox" name="subscribe" value="yes" checked />
+            Subscribe to newsletter
+          </label>
+
+          <label>
+            <input type="radio" name="contact" value="email" required />
+            Contact me via Email
+          </label>
+
+          <label>
+            <input type="radio" name="contact" value="phone" required />
+            Contact me via Phone
+          </label>
+
+          <label for="bio">Short Bio:</label>
+          <textarea id="bio" name="bio" rows="4" placeholder="Tell us something about yourself..."></textarea>
+        </fieldset>
+
+        <input type="submit" value="Register" />
+        <input type="reset" value="Clear Form" />
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 HTML5 Forms & Media Demo</p>
+  </footer>
+
+</body>
+</html>
